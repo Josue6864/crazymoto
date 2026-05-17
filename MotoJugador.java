@@ -18,12 +18,12 @@ public class MotoJugador extends Actor
     {
         if(Greenfoot.isKeyDown("left"))
         {
-            setLocation(getX() - 15, getY());
+            setLocation(getX() - 5, getY());
         }
 
         if(Greenfoot.isKeyDown("right"))
         {
-            setLocation(getX() + 15, getY());
+            setLocation(getX() + 5, getY());
         }
 
         if(getX() < 50)
