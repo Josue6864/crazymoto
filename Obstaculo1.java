@@ -24,6 +24,6 @@ public class Obstaculo1 extends Actor
 
     public void mover()
     {
-        setLocation(getX(), getY() + 5);
+        setLocation(getX(), getY() + 4);
     }
 }
