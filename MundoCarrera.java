@@ -1,25 +1,40 @@
+// Josue Garcia 26375
 import greenfoot.*;
 
 public class MundoCarrera extends World
 {
     int tiempo = 0;
+    boolean musicaIniciada = false;
+
+    GreenfootSound musica = new GreenfootSound("musica.wav");
 
     public MundoCarrera()
     {    
         super(800, 600, 1);
 
         setBackground("images.jpg");
-        
+
         MotoJugador moto = new MotoJugador();
 
         addObject(moto, 75, 500);
-        
+
         MotoJugador2 moto2 = new MotoJugador2();
+
         addObject(moto2, 75, 350);
+        prepare();
     }
 
     public void act()
     {
+        if(!musicaIniciada)
+        {
+            musica.setVolume(20);
+
+            musica.playLoop();
+
+            musicaIniciada = true;
+        }
+        
         tiempo++;
 
         if(tiempo % 50 == 0)
@@ -36,11 +51,7 @@ public class MundoCarrera extends World
 
         addObject(obstaculo, x, 0);
     }
-    
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
+
     private void prepare()
     {
     }
